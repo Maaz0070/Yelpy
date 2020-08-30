@@ -9,19 +9,26 @@
 import UIKit
 import AlamofireImage
 
-class RestaurantsViewController: UIViewController {
+class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
     
     
     // ––––– TODO: Add storyboard Items (i.e. tableView + Cell + configurations for Cell + cell outlets)
     // ––––– TODO: Next, place TableView outlet here
-    
     
     // –––––– TODO: Initialize restaurantsArray
     
     
     
     // ––––– TODO: Add tableView datasource + delegate
-    @IBOutlet weak var tableView: UITableViewCell!
+    @IBOutlet weak var tableView: UITableView!
     var restaurantsArray: [[String: Any?]] = []
     override func viewDidLoad() {
         super.viewDidLoad()
