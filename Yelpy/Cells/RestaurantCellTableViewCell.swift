@@ -11,6 +11,8 @@ import AlamofireImage
 
 class RestaurantCellTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var restaurantImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

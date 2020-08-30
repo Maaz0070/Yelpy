@@ -32,14 +32,14 @@ class RestaurantsViewController: UIViewController {
 
     }
     func getAPIData() {
-        API.getRestaurants() (completion: (restaurants) in guard let restaurants = restaurants else {
+        API.getRestaurants() { (restaurants) in guard let restaurants = restaurants else {
             return
         }
         print(restaurants)
         self.restaurantsArray = restaurants
-        self.tabelView.reloadData()
+        self.tableView.reloadData()
     }
-    func tableView(_ tableView UITableView, numberOfRowsInSection selection: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection selection: Int) -> Int {
         return restaurantsArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
@@ -49,6 +49,7 @@ class RestaurantsViewController: UIViewController {
             let restaurant = restaurantsArray[indexPath.row]
             
             cell.label.text = restaurant["name"] as? String ?? ""
+            
             if let imageUrlString = restaurant["image_url"] as? String {
                 let imageUrl = URL(string: imageUrlString)
                 cell.restaurantImage.af.setImage(withURL: imageUrl!)
@@ -67,3 +68,4 @@ class RestaurantsViewController: UIViewController {
 // ––––– TODO: Create tableView Extension and TableView Functionality
 
 
+}
