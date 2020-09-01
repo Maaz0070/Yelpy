@@ -42,12 +42,13 @@ struct API {
                 // ––––– TODO: Get data from API and return it using completion
                 print(data)
                 // converting json to dictionary
-                let dataDisctionary = try! JSONSerialization.jsonObject(wuth: data, options: []) as! [String: Any]
-                let restaurants 
+                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                let restaurants = dataDictionary["buisnesses"] as! [[String: Any]]
+                return completion(restaurants)
                 // Restaurant -> json
                 
                 
-                return completion([[:]])
+                
                 
                 }
             }
